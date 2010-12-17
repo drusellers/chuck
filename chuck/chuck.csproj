@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.1.40796, Culture=neutral, PublicKeyToken=aaa0f432407c68df">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Magnum">
       <HintPath>..\lib\Magnum\Magnum.dll</HintPath>
     </Reference>
@@ -39,9 +43,45 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dsl\Extensions\CommandLine\CommandLineOperationBuilder.cs" />
+    <Compile Include="Dsl\Extensions\CommandLine\CommandLineOptions.cs" />
+    <Compile Include="Dsl\Extensions\CommandLine\Hook.cs" />
+    <Compile Include="Dsl\Extensions\Incremental\Hook.cs" />
+    <Compile Include="Dsl\Extensions\Incremental\IncrementalTaskBuilder.cs" />
+    <Compile Include="Dsl\Extensions\Parallel\Hook.cs" />
+    <Compile Include="Dsl\Extensions\Parallel\ParallelTaskBuilder.cs" />
+    <Compile Include="Dsl\OperationConfiguration.cs" />
+    <Compile Include="Dsl\OperationConfigurator.cs" />
+    <Compile Include="Dsl\ScriptConfiguration.cs" />
+    <Compile Include="Dsl\ScriptConfigurator.cs" />
+    <Compile Include="Dsl\StepConfiguration.cs" />
+    <Compile Include="Dsl\StepConfigurator.cs" />
+    <Compile Include="Dsl\TaskConfiguration.cs" />
+    <Compile Include="Dsl\TaskConfigurator.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Model\ErrorBehavior.cs" />
+    <Compile Include="Model\ExecutionOutputStatus.cs" />
+    <Compile Include="Model\Operation.cs" />
+    <Compile Include="Model\OperationExecutionOutput.cs" />
+    <Compile Include="Model\Script.cs" />
+    <Compile Include="Model\ScriptExecutionOutput.cs" />
+    <Compile Include="Model\Step.cs" />
+    <Compile Include="Model\StepExecutionOutput.cs" />
+    <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\TransactionalTask.cs" />
     <Compile Include="Prompting\CommandLinePrompter.cs" />
     <Compile Include="Prompting\Prompter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptBuilder.cs" />
+    <Compile Include="Tasks\CommandLine\CommandLineTask.cs" />
+    <Compile Include="Tasks\Incremental\IIncrementer.cs" />
+    <Compile Include="Tasks\Incremental\Increment.cs" />
+    <Compile Include="Tasks\Incremental\IncrementalProcessingTask.cs" />
+    <Compile Include="Tasks\Incremental\RowCount.cs" />
+    <Compile Include="Tasks\Parallel\ParallelProcessingTask.cs" />
+    <Compile Include="UI\Console.cs" />
+    <Compile Include="UI\DotNetConsole.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
